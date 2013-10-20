@@ -2,6 +2,7 @@ $iconSpritePath: "../images/glyphicons-halflings.png";
 $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
 @import "bootstrap-sass/lib/bootstrap";
+@import "bootstrap-sass/lib/responsive";
 
 /* Put your CSS here */
 html, body {
@@ -15,20 +16,23 @@ body {
 }
 
 .hero-unit {
-    margin: 50px auto 0 auto;
-    height: 200px;
+    margin: 50px auto 50px auto;
+    min-height: 360px;
     font-size: 18px;
     font-weight: 200;
     line-height: 30px;
     background-color: #eee;
     border-radius: 6px;
-    padding: 60px;
+    padding: 20px 40px;
 }
 
-.hero-unit h1 {
+.hero-unit h3 {
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
+}
+.eqheight{
+  min-height: 280px
 }
 .listing.ng-enter,
 .listing.ng-leave,

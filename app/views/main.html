@@ -1,14 +1,69 @@
-<h2>{{counter | number}} Business Cases available!</h2>
-<p>Searching for a business to start? Or just a little amusement? Our Generator puts together {{counter | number}} Business Cases for you! Because a computer combines Target Group, Product/Service, Business Model and Point of Sales randomly, we believe that it would come up with Business Models that no-one has ever thought of and are maybe still exploitable - or just a good laugh because of their grade of impossibility.</p>
+<p>Searching for a business idea or just a little amusement? Throw on our generator!</p>
+
+<h2>{{counter | number}} Business Ideas available! What about ...</h2>
+
+
 
 <div class="hero-unit">
 
-  <h3 class="listing">{{things.title}} for {{targets.title}} marketed with {{business_models.title}} and sold at {{pos.title}}</h3>
+  <div class="eqheight">
+  <h3>
+    <a href="{{things.wiki}}">{{things.title}}</a> for 
+    <a href="{{targets.wiki}}">{{targets.title}}</a> sold at / via
+    <a href="{{pos.wiki}}">{{pos.title}}</a> with a 
+    <a href="{{business_models.wiki}}">{{business_models.title}}</a>.
+  </h3>
+  </div>
+    <div class="hidden">
+      <form ng-submit="addTodo()">
+        <input type="text" ng-model="todoText"  size="30"
+               placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+    <button type="button" ng-click="randomBC()" class="btn btn-large btn-danger ng-scope">OMG, this could work!</button>
+    <button type="button" ng-click="randomBC()" class="btn btn-large btn-info ng-scope">Makes no sense, next one please.</button>
+    
 
-  <button type="button" ng-click="randomBC()" class="btn btn-large btn-primary ng-scope pull-right">Randomize!</button>
-
-  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="Check out some random business ideas with this generator, over 1m ideas!" data-via="mschwanzer">Tweet</a>
-
-  
 </div>
+<div class="media">
+            
 
+              <img src="https://twimg0-a.akamaihd.net/profile_images/1436288805/Screen_shot_2011-07-11_at_12.29.32_AM.png" class="img-circle media-object pull-left" width="128">
+          
+            <div class="media-body">
+          <p>Made just for experimental reasons and to checkout <a href="http://angularjs.org/">Angularjs</a>, by Michael Schwanzer (<a href="http://www.twitter.com/mschwanzer">@mschwanzer</a>). A strategic thinker who likes to apply his engineering, management and web skills to optimize processes and create new business opportunities.</p>
+
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="Check out some random business ideas with this generator, over 1m ideas!" data-via="mschwanzer">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <!-- Place this tag where you want the +1 button to render. -->
+  <div class="g-plusone" data-size="medium"></div>
+      
+  <!-- Place this tag after the last +1 button tag. -->
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script>
+  <script src="//platform.linkedin.com/in.js" type="text/javascript">
+   lang: en_US
+  </script>
+  <script type="IN/Share" data-counter="right"></script>
+  
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=595104097170047";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="true" data-send="true"></div>
+
+</div>
+            </div>
+          </div>

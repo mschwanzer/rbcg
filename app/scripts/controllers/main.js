@@ -4,14 +4,24 @@ angular.module('rbcgApp')
   .controller('MainCtrl', function ($scope, $http) {
 
   	$scope.getBC = function(category, counter) {
-      console.log('getrandomBC', category);
-      $http.get('../data/'+category+'.json').success(function(data) {
+      //console.log('getrandomBC', category);
+      $http.get('data/'+category+'.json').success(function(data) {
         if(counter){
           $scope.counter = $scope.counter * data.length;
-          console.log('Cases', $scope.counter);
+          //console.log('Cases', $scope.counter);
         }
-        $scope[category] = data[Math.floor(Math.random() * data.length)];
-      });
+        var item = data[Math.floor(Math.random() * data.length)];
+        $scope[category] = item;
+        $http.jsonp('http://en.wikipedia.org/w/api.php?action=query&prop=info&inprop=url&format=json&titles='+item.title+'&callback=JSON_CALLBACK&redirects').success(function(data, status, headers, config) {
+          for (var i in data.query.pages){
+            $scope[category].wiki = data.query.pages[i].fullurl;
+          }
+        }).
+        error(function(data, status, headers, config) {
+            alert("ERROR: Could not get data.");
+        }); 
+      })
+      
     }
     $scope.countBC = function() {
       $scope.counter = true;
@@ -26,10 +36,11 @@ angular.module('rbcgApp')
       $scope.getBC('targets');
       $scope.getBC('things');
       $scope.getBC('pos');
-      $scope.countBC();
+      
     }
     var init = function () {
       $scope.randomBC();
+      $scope.countBC();
     };
     
     init();
