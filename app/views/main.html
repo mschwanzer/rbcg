@@ -1,9 +1,14 @@
+<h2>{{counter | number}} Business Cases available!</h2>
+<p>Searching for a business to start? Or just a little amusement? Our Generator puts together {{counter | number}} Business Cases for you! Because a computer combines Target Group, Product/Service, Business Model and Point of Sales randomly, we believe that it would come up with Business Models that no-one has ever thought of and are maybe still exploitable - or just a good laugh because of their grade of impossibility.</p>
+
 <div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+
+  <h3 class="listing">{{things.title}} for {{targets.title}} marketed with {{business_models.title}} and sold at {{pos.title}}</h3>
+
+  <button type="button" ng-click="randomBC()" class="btn btn-large btn-primary ng-scope pull-right">Randomize!</button>
+
+  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="Check out some random business ideas with this generator, over 1m ideas!" data-via="mschwanzer">Tweet</a>
+
+  
 </div>
+
